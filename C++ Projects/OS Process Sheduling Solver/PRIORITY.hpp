@@ -58,7 +58,7 @@ namespace PRIORITY {
     inline bool retFLAG(){  return  completeFlag; }
     
     void showAllValues(){
-      cout <<"\n P["<< processNum <<"]\t";
+      cout <<"\n\t P["<< processNum <<"]\t";
       cout << arrivalTime <<"\t";
       cout << burstTime <<"\t";
       cout << priority <<"\t";
@@ -74,14 +74,14 @@ namespace PRIORITY {
     short int n, pr, x, completed_processes = 0;
     double at, bt, least_at = 0, cpu_cycle = 0, avg_bt = 0, avg_tat = 0, avg_wt = 0;
     
-    cout <<"\n\n No. of Processes :  ";  cin >> n;
+    cout <<"\n\n\t No. of Processes :  ";  cin >> n;
     Process *P[n], *ready_queue[n], *running_p = nullptr;
     
     for (int i = 0 ; i < n ; ++i){
       cout <<'\n';
-      cout <<" Enter "<< i+1 <<" Process Arrival Time : ";  cin >> at;
-      cout <<" Enter "<< i+1 <<" Process Burst Time   : ";  cin >> bt;
-      cout <<" Enter "<< i+1 <<" Process Priority     : ";  cin >> pr;
+      cout <<"\t Enter "<< i+1 <<" Process Arrival Time : ";  cin >> at;
+      cout <<"\t Enter "<< i+1 <<" Process Burst Time   : ";  cin >> bt;
+      cout <<"\t Enter "<< i+1 <<" Process Priority     : ";  cin >> pr;
       
       P[i] = new Process(i+1, at, bt, pr);
     }
@@ -96,7 +96,7 @@ namespace PRIORITY {
     }
     // Intilize the cpu_cycle to the Samllest arrivalTime
     cpu_cycle += least_at;
-    cout <<"\n\n\tGRANT CHART >\n";
+    cout <<"\n\n\t\tGRANT CHART >\n";
     
     while (completed_processes != n){
       
@@ -124,12 +124,12 @@ namespace PRIORITY {
       running_p->assignResults(cpu_cycle);
       
       ++completed_processes;
-      cout <<"\n\t P"<< running_p->retPNUM() <<'\t'<< cpu_cycle;
+      cout <<"\n\t\t P"<< running_p->retPNUM() <<'\t'<< cpu_cycle;
       running_p = nullptr;
     }
     cout <<"\n\n";
-    cout <<"\n P[N]\tAt\tBt\tPr\tCt\tTat\tWt\tCflag";
-    cout <<"\n ----\t--\t--\t--\t---\t--\t--\t-----";
+    cout <<"\n\t P[N]\tAt\tBt\tPr\tCt\tTat\tWt\tCflag";
+    cout <<"\n\t ----\t--\t--\t--\t---\t--\t--\t-----";
     
     for (short int i = 0; i < n; ++i){
       
@@ -141,11 +141,11 @@ namespace PRIORITY {
       delete P[i]; // deleting the dynamic memory
       P[i] = ready_queue[i] = nullptr;
     }
-    cout <<"\n\n Throughput = "<< avg_bt/n;
-    cout <<"\n Avarage Turn Around Time = "<< avg_tat/n;
-    cout <<"\n Avarage Waiting Time = "<< avg_wt/n;
+    cout <<"\n\n\t Throughput = "<< avg_bt/n;
+    cout <<"\n\t Avarage Turn Around Time = "<< avg_tat/n;
+    cout <<"\n\t Avarage Waiting Time = "<< avg_wt/n;
     
-    cout <<"\n\n Want to calculate PRIORITY Again ? \n Press 'A' ...  ";
+    cout <<"\n\n\t Want to calculate PRIORITY Again ? \n\t Press 'A' ...  ";
     cin.get();
     if (cin.get() == 'A')  goto repeat;
     return;

@@ -59,7 +59,7 @@ StackExpression<ExpType> :: StackExpression(){
     if (typeid(ExpType) == typeid(InFix)){ exp_type = 'I'; }
     else if (typeid(ExpType) == typeid(PreFix)){ exp_type = 'P'; }
     else if (typeid(ExpType) == typeid(PostFix)){ exp_type = 'O'; }
-    else { throw "\n TypeError : built-in types and pre-defined types or any other types are not allowed "; }
+    else { throw "\n\t TypeError : built-in types and pre-defined types or any other types are not allowed "; }
   }
   catch(const char err_msz[]){
     exp = nullptr;
@@ -82,7 +82,7 @@ template <typename ExpType>
 void StackExpression<ExpType> :: input(const char *ip_exp){
   
   if (exp == nullptr || exp_type == '\0'){
-    printf("\n LogicalError : object was not intialized with a proper Stack Expression type ");
+    printf("\n\t LogicalError : object was not intialized with a proper Stack Expression type ");
     return;
   }
 }
@@ -93,7 +93,7 @@ template <typename ExpType>
 void StackExpression<ExpType> :: input(string &ip_exp){
   
   if (exp == nullptr || exp_type == '\0'){
-    printf("\n LogicalError : object was not intialized with a proper Stack Expression type ");
+    printf("\n\t LogicalError : object was not intialized with a proper Stack Expression type ");
     return;
   }
 }
@@ -104,7 +104,7 @@ template <typename ExpType>
 void StackExpression<ExpType> :: input(istream &ist){
   
   if (exp == nullptr || exp_type == '\0'){
-    printf("\n LogicalError : object was not intialized with a proper Stack Expression type ");
+    printf("\n\t LogicalError : object was not intialized with a proper Stack Expression type ");
     return;
   }
   

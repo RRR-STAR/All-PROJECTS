@@ -75,10 +75,10 @@ const bool InFix :: validateInputExp(const string &ip_exp){
         
         default :// for any other character except alphabets & digits, it fetch exception
         if (isalpha(ip_exp[i]) && islower(ip_exp[i])){ 
-          throw "\n ExpressionError : lower case letters are not allowed as operands "; 
+          throw "\n\t ExpressionError : lower case letters are not allowed as operands "; 
         } 
         else if (isalpha(ip_exp[i]) || isdigit(ip_exp[i])){/*alphabets & digits are allowed */}
-        else { throw "\n ExpressionError : contain invaild symbols "; }
+        else { throw "\n\t ExpressionError : contain invaild symbols "; }
       }
       /*
       if any exception was not raised from the switch block it means currently selected characters is syntatically correct, and now logically checking...
@@ -103,7 +103,7 @@ const bool InFix :: validateInputExp(const string &ip_exp){
         
         // if start brackets placed after any operand or end bracket, then
         if (num_operand_occur == true || alph_operand_occur == true || end_bracket_occur == true){ 
-          throw "\n ExpressionError : opening bracket error, expected to be an operator before opening bracket "; 
+          throw "\n\t ExpressionError : opening bracket error, expected to be an operator before opening bracket "; 
         }
         st_bracket_occur = true;  ++st_bracket_count;
         
@@ -118,7 +118,7 @@ const bool InFix :: validateInputExp(const string &ip_exp){
         
         // if end brackets placed after any operator, then
         if (operator_occur == true){
-          throw "\n ExpressionError : closing bracket error, expected to be an operand before closing bracket ";
+          throw "\n\t ExpressionError : closing bracket error, expected to be an operand before closing bracket ";
         }
         end_bracket_occur = true;  ++end_bracket_count;
         
@@ -134,7 +134,7 @@ const bool InFix :: validateInputExp(const string &ip_exp){
         
         // if number operand placed after any end bracket or alphabet operand
         if (alph_operand_occur == true || end_bracket_occur == true){
-          throw "\n ExpressionError : constant error, expected to be an operator before constant ";
+          throw "\n\t ExpressionError : constant error, expected to be an operator before constant ";
         }
         num_operand_occur = true;
         // if next char is not digit then multi-operand ends
@@ -152,7 +152,7 @@ const bool InFix :: validateInputExp(const string &ip_exp){
         
         // if alphabet operand placed after any end bracket or number operand or itselt
         if (alph_operand_occur == true || num_operand_occur == true || end_bracket_occur == true){
-          throw "\n ExpressionError : operand error, expected to be an operator before operand ";
+          throw "\n\t ExpressionError : operand error, expected to be an operator before operand ";
         }
         alph_operand_occur = true;  ++operand_count;
         
@@ -167,7 +167,7 @@ const bool InFix :: validateInputExp(const string &ip_exp){
         
         // if operator placed after any operator or start bracket  
         if (operator_occur == true || st_bracket_occur == true){
-          throw "\n ExpressionError : operator error, expected to be an operand before operator ";
+          throw "\n\t ExpressionError : operator error, expected to be an operand before operator ";
         }
         operator_occur = true;  ++operator_count;
         
@@ -180,15 +180,15 @@ const bool InFix :: validateInputExp(const string &ip_exp){
     }
     // if brackets are not equal, means bracket open but not closed or close bracket without opening
     if (st_bracket_count != end_bracket_count){
-      throw "\n ExpressionError : brackets are not closed properly ";
+      throw "\n\t ExpressionError : brackets are not closed properly ";
     }
     // if the exp doesn't conatin any operand
     if (operand_count == 0){
-      throw "\n ExpressionError : doesn't found any operand in the expression ";
+      throw "\n\t ExpressionError : doesn't found any operand in the expression ";
     }
     // if the operators and operands are not given properly 
     if (operand_count - 1 != operator_count){
-      throw "\n ExpressionError : invalid infix expression ";
+      throw "\n\t ExpressionError : invalid infix expression ";
     }
   }
   catch (const char err_msz[]){
@@ -208,7 +208,7 @@ void InFix :: input(const char *ip_exp){
   
   // if expression is not correctly given or validated, then
   if (exp_validation != true){ 
-    printf("\n InputError : given input can't be taken as expression ");
+    printf("\n\t InputError : given input can't be taken as expression ");
     return;
   }
   // if input() func is already have a validated input exp
@@ -230,7 +230,7 @@ void InFix :: input(string &ip_exp){
   
   // if expression is not correctly given, then
   if (exp_validation != true){ 
-    printf("\n InputError : given input can't be taken as expression ");
+    printf("\n\t InputError : given input can't be taken as expression ");
     delete copy_ip_exp;  copy_ip_exp = nullptr;
     return;
   }
@@ -253,7 +253,7 @@ void InFix :: input(istream &ip){
   
   // if expression is not correctly given, then
   if (exp_validation != true){ 
-    printf("\n InputError : given input can't be taken as expression ");
+    printf("\n\t InputError : given input can't be taken as expression ");
     delete []ip_exp;  ip_exp = nullptr;  
     return;
   }
@@ -268,7 +268,7 @@ void InFix :: input(istream &ip){
 const char* InFix :: getInputExp(){
   
   if (exp_validation == false){
-    printf("\n ValueError : input was not taken or validated to return any value ");  
+    printf("\n\t ValueError : input was not taken or validated to return any value ");  
     return  "\0";
   }
   unsigned short int exp_len = string(exp).length();
@@ -293,13 +293,13 @@ const char* InFix :: getInputExp(){
 void InFix :: showInputExp(){
   
   if (exp_validation == false){
-    printf("\n DisplayError : input was not taken or validated to display ");
+    printf("\n\t DisplayError : input was not taken or validated to display ");
     return;
   }
   this->getInputExp(); // to remove the spaces
   unsigned short int exp_len = string(exp).length();
   
-  printf("\n Input Expression   :  ");
+  printf("\n\t Input Expression   :  ");
   for (short int i = 0; i < exp_len; ++i){
     
     // digits should be printed without spaces
@@ -410,7 +410,7 @@ void InFix :: convertToPostfix(const short int &exp_len, const char *_exp, char 
 const char* InFix :: getPostfixExp(){
   
   if (exp_validation == false){
-    printf("\n ValueError : input was not taken or validated to return any value ");
+    printf("\n\t ValueError : input was not taken or validated to return any value ");
     return  "\0";
   }
   // for only one character the logical code is not needed
@@ -440,13 +440,13 @@ const char* InFix :: getPostfixExp(){
 void InFix :: showPostfixExp(){
   
   if (exp_validation == false){
-    printf("\n DisplayError : input was not taken or validated to display ");
+    printf("\n\t DisplayError : input was not taken or validated to display ");
     return;
   }
   this->getPostfixExp(); // to convert into postfix
   unsigned short int exp_len = string(res_exp).length();
   
-  printf("\n Postfix Expression :  ");
+  printf("\n\t Postfix Expression :  ");
   for (short int i = 0; i < exp_len; ++i){
     
     // digits should be printed without spaces
@@ -465,7 +465,7 @@ void InFix :: showPostfixExp(){
 const char* InFix :: getPrefixExp(){
   
   if (exp_validation == false){
-    printf("\n ValueError : input was not taken or validated to return any value ");
+    printf("\n\t ValueError : input was not taken or validated to return any value ");
     return  "\0";
   }
   // for only one character the logical code is not needed
@@ -548,13 +548,13 @@ const char* InFix :: getPrefixExp(){
 void InFix :: showPrefixExp(){
   
   if (exp_validation == false){
-    printf("\n DisplayError : input was not taken or validated to display ");
+    printf("\n\t DisplayError : input was not taken or validated to display ");
     return;
   }
   this->getPrefixExp(); // to convert into postfix
   unsigned short int exp_len = string(res_exp).length();
   
-  printf("\n Prefix Expression  :  ");
+  printf("\n\t Prefix Expression  :  ");
   for (short int i = 0; i < exp_len; ++i){
     
     // digits should be printed without spaces
@@ -574,9 +574,13 @@ typedef  InFix  InfixExpression;
 #include <iostream>
 
 int main(){
+  system("cls");
+  cout <<"\n\t--------------------------------------------------------";
+  cout <<"\n\t|        Welcome to Stack Expression Evaluater         |";
+  cout <<"\n\t--------------------------------------------------------";
   
   InFix  e;
-  cout <<endl<<" Enter the Infix Exprrssion : ";
+  cout <<"\n\n\t Enter the Infix Exprrssion : ";
   e.input(cin);
   e.showInputExp();
   e.showPrefixExp();

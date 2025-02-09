@@ -17,7 +17,7 @@
 #include <cstring>
 #include <cmath>
 #include <conio.h>
-#include "NumberSystem.h++"
+#include "NumberSystem.hpp"
 
 using namespace std;
 
@@ -41,7 +41,7 @@ void NumSys_:: validateBinaryInput(){
   while (valid_input_provided != true){
     
     char *ip_num = new char[50]();  
-    cout <<"\n\n Enter the Binary Number : ";
+    cout <<"\n\n\t Enter the Binary Number : ";
     cin.getline(ip_num, 50);
     
     // Exception Handling (only 0's and 1's are allowed) 
@@ -62,17 +62,17 @@ void NumSys_:: validateBinaryInput(){
       if (count_dots > 1 || ip_num[0] == '.' || ip_num[ip_num_len-1] == '.'){ throw  0; }
     }
     catch(int){
-      cout <<"\n Not a valid Expression !\n Dot placing is Invalid. ";
+      cout <<"\n\t Not a valid Expression !\n\t Dot placing is Invalid. ";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
     catch(char){
-      cout <<"\n Spaces can't be included !";
+      cout <<"\n\t Spaces can't be included !";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
     catch(...){
-      cout <<"\n Binary Numbers[0's and 1's] are only allowed !\n Please enter a appropriate Binary Number.";
+      cout <<"\n\t Binary Numbers[0's and 1's] are only allowed !\n\t Please enter a appropriate Binary Number.";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
@@ -91,7 +91,7 @@ void NumSys_:: validateOctalInput(){
   while (valid_input_provided != true){
     
     char *ip_num = new char[50]();  
-    cout <<"\n\n Enter the Octal Number : ";
+    cout <<"\n\n\t Enter the Octal Number : ";
     cin.getline(ip_num, 50);
     
     // Exception Handling (only Numbers are allowed [0 - 9]) 
@@ -114,17 +114,17 @@ void NumSys_:: validateOctalInput(){
       if (count_dots > 1 || ip_num[0] == '.' || ip_num[ip_num_len-1] == '.'){ throw  0; }
     }
     catch(int){
-      cout <<"\n Not a valid Expression !\n Dot placing is Invalid.";
+      cout <<"\n\t Not a valid Expression !\n\t Dot placing is Invalid.";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
     catch(char){
-      cout <<"\n Spaces can't be included !";
+      cout <<"\n\t Spaces can't be included !";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
     catch(...){
-      cout <<"\n Numbers[ between 0 - 7 ] are only allowed !\n Please enter a appropriate Ocatl Number.";
+      cout <<"\n\t Numbers[ between 0 - 7 ] are only allowed !\n\t Please enter a appropriate Ocatl Number.";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
@@ -143,7 +143,7 @@ void NumSys_:: validateDecimalInput(){
   while (valid_input_provided != true){
     
     char *ip_num = new char[50]();  
-    cout <<"\n\n Enter the Decimal Number : ";
+    cout <<"\n\n\t Enter the Decimal Number : ";
     cin.getline(ip_num, 50);
     
     // Exception Handling (only Numbers are allowed [0 - 9]) 
@@ -166,17 +166,17 @@ void NumSys_:: validateDecimalInput(){
       if (count_dots > 1 || ip_num[0] == '.' || ip_num[ip_num_len-1] == '.'){ throw  0; }
     }
     catch(int){
-      cout <<"\n Not a valid Expression !\n Dot placing is Invalid.";
+      cout <<"\n\t Not a valid Expression !\n\t Dot placing is Invalid.";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
     catch(char){
-      cout <<"\n Spaces can't be included !";
+      cout <<"\n\t Spaces can't be included !";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
     catch(...){
-      cout <<"\n Numbers are only allowed !\n Please enter a appropriate Number.";
+      cout <<"\n\t Numbers are only allowed !\n\t Please enter a appropriate Number.";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
@@ -195,7 +195,7 @@ void NumSys_:: validateHexaDecimalInput(){
   while (valid_input_provided != true){
     
     char *ip_num = new char[50]();  
-    cout <<"\n\n Enter the HexaDecimal Number : ";
+    cout <<"\n\n\t Enter the HexaDecimal Number : ";
     cin.getline(ip_num, 50);
     
     // Exception Handling (only Numbers[0 - 9] & letters[a - f] are allowed) 
@@ -224,17 +224,17 @@ void NumSys_:: validateHexaDecimalInput(){
       if (count_dots > 1 || ip_num[0] == '.' || ip_num[ip_num_len-1] == '.'){ throw  0; }
     }
     catch(int){
-      cout <<"\n Not a valid Expression !\n Dot placing is Invalid.";
+      cout <<"\n\t Not a valid Expression !\n\t Dot placing is Invalid.";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
     catch(char){
-      cout <<"\n Spaces can't be included !";
+      cout <<"\n\t Spaces can't be included !";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
     catch(...){
-      cout <<"\n Numbers[ between 0 - 9 ] and letters[ between A - F ] are only allowed !\n Please enter a appropriate Hexa Decimal Number.";
+      cout <<"\n\t Numbers[ between 0 - 9 ] and letters[ between A - F ] are only allowed !\n\t Please enter a appropriate Hexa Decimal Number.";
       delete []ip_num;  ip_num = nullptr;
       continue;
     }
@@ -248,12 +248,12 @@ void NumSys_:: validateHexaDecimalInput(){
 
 
 void NumSys_:: input(){
-  cout <<"\n Press ... ";
-  cout <<"\n {B} To enter a Binary value ";
-  cout <<"\n {O} To enter a Octal value ";
-  cout <<"\n {D} To enter a Decimal value ";
-  cout <<"\n {H} To enter a HexaDecimal value ";
-  cout <<"\n ->  Enter :  ";
+  cout <<"\n\t Press ... ";
+  cout <<"\n\t {B} To enter a Binary value ";
+  cout <<"\n\t {O} To enter a Octal value ";
+  cout <<"\n\t {D} To enter a Decimal value ";
+  cout <<"\n\t {H} To enter a HexaDecimal value ";
+  cout <<"\n\t ->  Enter :  ";
   switch (getche()){
     case 'R' : cout <<endl;  break;
     case 'r' : cout <<endl;  break;
@@ -265,7 +265,7 @@ void NumSys_:: input(){
     case 'd' : validateDecimalInput();  break;
     case 'H' : validateHexaDecimalInput();  break;
     case 'h' : validateHexaDecimalInput();  break;
-    default  : cout <<"\n\n Invalid Choise !\n Please Choose a right Option.\n";
+    default  : cout <<"\n\n\t Invalid Choise !\n\t Please Choose a right Option.\n";
   }
 }
 
@@ -666,7 +666,7 @@ const char* NumSys_:: convertBinaryToOctal(){
         res_num[res_i] = '7';  ++res_i;
       }
       else {// it indicates that there is any wrong value occoured
-        cout <<"\n Some Unknown error occoured !";
+        cout <<"\n\t Some Unknown error occoured !";
         return  false;
       }
       return  true;
@@ -849,7 +849,7 @@ const char* NumSys_:: convertBinaryToHexaDecimal(){
         res_num[res_i] = 'F';  ++res_i;
       }
       else {// it indicates that there is any wrong value occoured
-        cout <<"\n Some Unknown error occoured !";
+        cout <<"\n\t Some Unknown error occoured !";
         return  false;
       }
       return  true;
@@ -985,7 +985,7 @@ const char* NumSys_:: convertDecimalToHexaDecimal(){
 const char* NumSys_:: getBinary(){
   // if there doesn't input taken by user 
   if (static_cast<string>(num).empty() || num_type == '\0'){
-    cout <<"\n Please take a input first !";
+    cout <<"\n\t Please take a input first !";
     return  (const char*)"\0";
   }
   if (num_type == 'B'){
@@ -1008,7 +1008,7 @@ const char* NumSys_:: getBinary(){
 const char* NumSys_:: getOctal(){
   // if there doesn't input taken by user 
   if (static_cast<string>(num).empty() || num_type == '\0'){
-    cout <<"\n Please take a input first !";
+    cout <<"\n\t Please take a input first !";
     return  (const char*)"\0";
   }
   if (num_type == 'B'){
@@ -1031,7 +1031,7 @@ const char* NumSys_:: getOctal(){
 const char* NumSys_:: getDecimal(){
   // if there doesn't input taken by user 
   if (static_cast<string>(num).empty() || num_type == '\0'){
-    cout <<"\n Please take a input first !";
+    cout <<"\n\t Please take a input first !";
     return  (const char*)"\0";
   }
   if (num_type == 'B'){
@@ -1054,7 +1054,7 @@ const char* NumSys_:: getDecimal(){
 const char* NumSys_:: getHexaDecimal(){
   // if there doesn't input taken by user 
   if (static_cast<string>(num).empty() || num_type == '\0'){
-    cout <<"\n Please take a input first !";
+    cout <<"\n\t Please take a input first !";
     return  (const char*)"\0";
   }
   if (num_type == 'B'){

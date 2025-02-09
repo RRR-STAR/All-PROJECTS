@@ -55,7 +55,7 @@ namespace RR {
       completeFlag = true;
     }
     void showAllValues(){
-      cout <<"\n P["<< processNum <<"]\t";
+      cout <<"\n\t P["<< processNum <<"]\t";
       cout << arrivalTime <<"\t";
       cout << burstTime <<"\t";
       cout << completionTime <<"\t";
@@ -96,8 +96,8 @@ namespace RR {
     double at, bt, time_q, cpu_cycle = 0, 
     avg_bt = 0, avg_tat = 0, avg_wt = 0, avg_rt = 0;
     
-    cout <<"\n\n No. of Processes :  ";  cin >> n;
-    cout <<"\n Enter the Time Quantam : ";  cin >> time_q;
+    cout <<"\n\n\t No. of Processes :  ";  cin >> n;
+    cout <<"\n\t Enter the Time Quantam : ";  cin >> time_q;
     if (time_q == 0){ cout <<"\n Time Quantum can't be Zero !";  return; }
     
     Process *P[n], *tempPtr = nullptr;
@@ -105,8 +105,8 @@ namespace RR {
     
     for (int i = 0; i < n; ++i){
       cout <<'\n';
-      cout <<" Enter "<< i+1 <<" Process Arrival Time : ";  cin >> at;
-      cout <<" Enter "<< i+1 <<" Process Burst Time   : ";  cin >> bt;
+      cout <<"\t Enter "<< i+1 <<" Process Arrival Time : ";  cin >> at;
+      cout <<"\t Enter "<< i+1 <<" Process Burst Time   : ";  cin >> bt;
       
       P[i] = new Process(i+1, at, bt);
     }
@@ -136,7 +136,7 @@ namespace RR {
     P[0]->setAFLAG(true); // change first Processes Arrival flag to true
     ++arrived_processes; // first process Arrived in Queue
     
-    cout <<"\n\n\tGRANT CHART >\n";
+    cout <<"\n\n\t\t GRANT CHART >\n";
     while (completed_processes != n){
       
       // if queue is empty then accessing front() makes error !
@@ -188,12 +188,12 @@ namespace RR {
         ++completed_processes;
       }
       
-      cout <<"\n\t P"<< ready_queue.front()->retPNUM() <<'\t'<< cpu_cycle;
+      cout <<"\n\t\t P"<< ready_queue.front()->retPNUM() <<'\t'<< cpu_cycle;
       ready_queue.pop(); // for selecting the next element into the queue
     }
     cout <<"\n\n";
-    cout <<"\n P[N]\tAt\tBt\tCt\tTat\tWt\tRt\tflag";
-    cout <<"\n ----\t--\t--\t--\t---\t--\t--\t----";
+    cout <<"\n\t P[N]\tAt\tBt\tCt\tTat\tWt\tRt\tflag";
+    cout <<"\n\t ----\t--\t--\t--\t---\t--\t--\t----";
     
     for (short int i = 0; i < n; ++i){
       
@@ -205,12 +205,12 @@ namespace RR {
       
       delete P[i];  P[i] = nullptr;
     }
-    cout <<"\n\n Throughput = "<< avg_bt/n;
-    cout <<"\n Avarage Turn Around Time = "<< avg_tat/n;
-    cout <<"\n Avarage Waiting Time = "<< avg_wt/n;
-    cout <<"\n Avarage Response Time = "<< avg_rt/n;
+    cout <<"\n\n\t Throughput = "<< avg_bt/n;
+    cout <<"\n\t Avarage Turn Around Time = "<< avg_tat/n;
+    cout <<"\n\t Avarage Waiting Time = "<< avg_wt/n;
+    cout <<"\n\t Avarage Response Time = "<< avg_rt/n;
     
-    cout <<"\n\n Want to calculate RR again ? \n Press 'A' ...  ";
+    cout <<"\n\n\t Want to calculate RR again ? \n\t Press 'A' ...  ";
     cin.get();
     if (cin.get() == 'A')  goto repeat;
     return;

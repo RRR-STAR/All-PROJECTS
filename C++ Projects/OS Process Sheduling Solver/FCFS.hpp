@@ -56,7 +56,7 @@ namespace FCFS {
     inline bool retFLAG(){  return  completeFlag; }
     
     void showAllValues(){
-      cout <<"\n P["<< processNum <<"]\t";
+      cout <<"\n\t P["<< processNum <<"]\t";
       cout << arrivalTime <<"\t";
       cout << burstTime <<"\t";
       cout << completionTime <<"\t";
@@ -71,13 +71,13 @@ namespace FCFS {
     short int n; // total no. of processes
     double at, bt, cpu_cycle = 0, avg_bt = 0, avg_tat = 0, avg_wt = 0;
     
-    cout <<"\n\n No. of Processes :  ";  cin >> n;
+    cout <<"\n\n\t No. of Processes :  ";  cin >> n;
     Process  *P[n], *tempPtr = nullptr;
     
     for (short int i = 0; i < n; ++i){
       cout <<'\n';
-      cout <<" Enter "<< i+1 <<" Process Arrival Time : ";  cin >> at;
-      cout <<" Enter "<< i+1 <<" Process Burst Time   : ";  cin >> bt;
+      cout <<"\t Enter "<< i+1 <<" Process Arrival Time : ";  cin >> at;
+      cout <<"\t Enter "<< i+1 <<" Process Burst Time   : ";  cin >> bt;
       
       P[i] = new Process(i+1, at, bt);
     }
@@ -102,7 +102,7 @@ namespace FCFS {
       }
     }
     // Execute the Sorted Processes one by one
-    cout <<"\n\n\tGRANT CHART >\n";
+    cout <<"\n\n\t\t GRANT CHART > \n";
     for (short int i = 0; i < n; ++i){
       
       // if no processes arrived in this cpu cycle 
@@ -111,11 +111,11 @@ namespace FCFS {
       }
       cpu_cycle += P[i]->retBT();
       P[i]->assignResults(cpu_cycle);
-      cout <<"\n\t P"<< P[i]->retPNUM() <<'\t'<< cpu_cycle;
+      cout <<"\n\t\t P"<< P[i]->retPNUM() <<'\t'<< cpu_cycle;
     }
     cout <<"\n\n";
-    cout <<"\n P[N]\tAt\tBt\tCt\tTat\tWt\tCflag";
-    cout <<"\n ----\t--\t--\t--\t---\t--\t-----";
+    cout <<"\n\t P[N]\tAt\tBt\tCt\tTat\tWt\tCflag";
+    cout <<"\n\t ----\t--\t--\t--\t---\t--\t-----";
     
     for (short int i = 0; i < n; ++i){
       
@@ -128,10 +128,10 @@ namespace FCFS {
       P[i] = nullptr; // prevent from being dangling ptr
     }
     
-    cout <<"\n\n Throughput = "<< avg_bt/n;
-    cout <<"\n Avarage Turn Around Time = "<< avg_tat/n; 
-    cout <<"\n Avarage Waiting Time = "<< avg_wt/n;
-    cout <<"\n\n Want to calculate FCFS Again ? \n Press 'A' ...  ";
+    cout <<"\n\n\t Throughput = "<< avg_bt/n;
+    cout <<"\n\t Avarage Turn Around Time = "<< avg_tat/n; 
+    cout <<"\n\t Avarage Waiting Time = "<< avg_wt/n;
+    cout <<"\n\n\t Want to calculate FCFS Again ? \n\t Press 'A' ...  ";
     cin.get();
     if (cin.get() == 'A')  goto repeat;
     return;

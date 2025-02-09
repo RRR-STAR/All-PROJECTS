@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "NumberSystem.h++"
+#include "NumberSystem.hpp"
 
 
 class __NumberSystem__ : public NumberSystem {
@@ -14,14 +14,14 @@ class __NumberSystem__ : public NumberSystem {
   void input() override { NumberSystem :: input(); }
   
   const char* getBinary(){
-    std::cout <<"\n in __NumberSystem__.getBinary() : ";
+    std::cout <<"\n\t in __NumberSystem__.getBinary() : ";
     std::cout << NumberSystem :: getBinary(); 
   }
   
   // if the getOctal() or other functions is not mentioned virtual then the Base class func's are called rather than Derived class func's
   
   const char* getOctal(){
-    std::cout <<"\n in __NumberSystem__.getOctal()  : ";
+    std::cout <<"\n\t in __NumberSystem__.getOctal()  : ";
     std::cout << NumberSystem :: getOctal();
   }
   

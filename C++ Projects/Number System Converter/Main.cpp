@@ -1,7 +1,7 @@
 
 #include <iostream>
 #include <conio.h>
-#include "NumberSystem.h++"
+#include "NumberSystem.hpp"
 using namespace std;
 
 
@@ -11,19 +11,20 @@ main(){
   cout <<"\n\t--------------------------------------------------------";
   cout <<"\n\t|           Welcome to Number System Converter         |";
   cout <<"\n\t--------------------------------------------------------";
+  cout <<"\n\n";
   
   NumberSystem *n = new NumberSystem();
   
   n->input();
   
-  cout <<endl<<" Eqivalent Binary Value      : "<< n->getBinary();
-  cout <<endl<<" Eqivalent Octal Value       : "<< n->getOctal();
-  cout <<endl<<" Eqivalent Decimal Value     : "<< n->getDecimal();
-  cout <<endl<<" Eqivalent HexaDecimal Value : "<< n->getHexaDecimal();
+  cout <<endl<<"\t Eqivalent Binary Value      : "<< n->getBinary();
+  cout <<endl<<"\t Eqivalent Octal Value       : "<< n->getOctal();
+  cout <<endl<<"\t Eqivalent Decimal Value     : "<< n->getDecimal();
+  cout <<endl<<"\t Eqivalent HexaDecimal Value : "<< n->getHexaDecimal();
   
   delete n;   n = nullptr;
   
-  cout <<"\n\n Want to repeat ?  Press [A] ...  ";
+  cout <<"\n\n\t Want to repeat ?  Press [A] ...  ";
   if (getche() == 'A'){ goto repeat; }
   
   return 0;
