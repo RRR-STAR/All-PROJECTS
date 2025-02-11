@@ -2,7 +2,6 @@
  * Tetris Game using C++11 and SFML-2.4.2
  */
 
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <fstream>
 

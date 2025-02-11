@@ -5,7 +5,6 @@
 
 #include <SFML/Graphics.hpp>
 #include <random>
-#include <iostream>
 #include <fstream>
 
 class piece {  
