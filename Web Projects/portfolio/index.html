@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="manifest" href="manifest.json" />
+  <title>S.M.R | Portfolio</title>
+  <meta name="description" content="Personal website of SK MD RAIHAN">
+
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="S.M.R | Portfolio">
+  <meta itemprop="description" content="Personal website of SK MD RAIHAN">
+  <meta itemprop="image"
+    content="">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="S.M.R | Portfolio">
+  <meta property="og:description" content="Personal website of SK MD RAIHAN">
+  <meta property="og:image"
+    content="">
+  
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
+</head>
+
+<body>
+  <nav class="container navbar sticky sticky-top navbar-expand-xl">
+    <a class="navbar-brand" href="#"> S.M.R </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler span"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item-active"><a class="nav-link" href="#"><i class="fas fa-home"></i> Home </a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html"><i class="far fa-user"></i> About </a></li>
+      <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fab fa-codepen"></i> Projects </a></li>
+      <li class="nav-item"><a class="nav-link" href="resume.html"><i class="far fa-file-alt"></i> Resume </a> </li>
+    </ul>
+  </div>
+  </nav>
+  <section>
+    <div class="container-fluid home-section" id="home">
+      <Particle />
+      <div class="container home-content">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="home-header col-md-7">
+            <h1 style="padding-bottom: 10; color: white;" class="heading">
+              Hi There! <span class="wave">👋🏻</span>
+            </h1>
+            <h3 class="heading" style="color: wheat;"><script language = "javascript" src="js/greet.js">
+            </script></h3>
+            <h1 class="heading-name" style="color: aliceblue;">
+              I'M <strong class="main-name"> SK MD RAIHAN </strong>
+            </h1>
+            <div style="text-align: left; padding: 50;">
+              <h2 class="heading Typewriter__wrapper"><script language = "javascript"  src="js/typewriter.js">
+              </script> </h2>
+              <br><br><br>
+            </div>
+          </div>
+          <div class="col-md-4" style="padding-bottom: 20">
+            <img src="img/home-main.svg" alt="home pic" class="img-fluid" />
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+    <div class="Container-fluid home-about-section" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 home-about-description">
+            <h1 style="font-Size: 2.6em; color: white;">
+              LET ME <span class="purple"> INTRODUCE </span> MYSELF
+            </h1>
+            <p class="home-about-body">
+              I fell in love with programming and I have at least learnt
+              something,<br> I think… 🤷‍♂️
+              <br>
+              <br> 
+              I am fluent in classics like&nbsp;
+              <b><b class="purple"> C , C++11 , Python , MySQL </b></b>
+              <br />
+              <br />
+              My current focus is on&nbsp;
+              <b><b class="purple"> OOP's & Build Projects </b></b>
+              <br />
+              <br />
+              Whenever possible, I also love to develop games with 
+              <br>
+              <b><b class="purple"> C++ and its Frameworks </b></b>
+              like 
+              <b><b class="purple"> SFML </b></b>
+            </p>
+          </div>
+          <div class="col-md-4 myAvtar">
+            <Tilt>
+              <img src="img/avatar.png" class="img-fluid" alt="avatar" />
+            </Tilt>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 home-about-social">
+            <h1 style="color: white;"> FIND ME ON </h1>
+            <p> Feel free to <span class="purple"> connect </span> with me </p>
+            <ul class="home-about-social-links">
+              <li class="social-icons">
+                <a
+                  href="https://github.com/RRR-STAR"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="icon-colour  home-social-icons"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </li>
+              <li class="social-icons">
+                <a
+                  href="https://wa.me/916295312768"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="icon-colour  home-social-icons"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </li>
+              <li class="social-icons">
+                <a
+                  href="https://www.linkedin.com/in/sk-md-raihan"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="icon-colour  home-social-icons"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
